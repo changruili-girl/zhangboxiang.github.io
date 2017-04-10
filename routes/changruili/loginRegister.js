@@ -2,10 +2,13 @@ var express = require('express');
 var mysql = require('mysql');
 var session=require('express-session');
 var router = express.Router();
+var fs = require('fs');
+var formidable = require("formidable");
+
 var pool = mysql.createPool({
-//	host: '192.168.43.168',
+	host: '192.168.43.168',
 //	host:'192.168.113.148',
-	host:'192.168.1.104',
+//	host:'192.168.1.104',
 	user: 'root',
 	password: 'root',
 	database: 'cc-test1603',
@@ -50,6 +53,7 @@ router.post('/register', function(req, res) {
 	var uname = req.body['username'];
 	var pwd = req.body['password'];
 	var pwdtwo = req.body['pwdtwo'];
+	var img = req.body['img'];
 	//console.log(typeof email)
 	//console.log('用户名：'+uname + '|' +'密码：'+ pwd + '|' +'邮箱：'+ email)
 	
@@ -57,7 +61,7 @@ router.post('/register', function(req, res) {
       move([uname],function(err,result,connection){
 		 console.log('into move.....')
            if(result.length==0){
-              move([uname,pwd,email],function(err,result,connection){
+              move([uname,pwd,email,img],function(err,result,connection){
               //	console.log(err)
               	if(err){
               		res.send({flag:3})
@@ -65,7 +69,7 @@ router.post('/register', function(req, res) {
               	}
                      connection.release();
                         res.send({flag:1})//注册成功
-              },"insert into login(username,password,email) values(?,?,?)")
+              },"insert into login(username,password,email,img) values(?,?,?,?)")
           }
           else if(result.length>0){
              res.send({flag:2})//已注册
@@ -93,7 +97,8 @@ router.post('/login',function(req,res){
       	return
       }else if(result[0].username==uname && result[0].password==password){
       	req.session.uname=uname;
-      	//console.log(req.session.uname)
+      	req.session.img = result[0].img;
+      	//console.log(req.session.uname,req.session.img)
       	result={flag:1,id:result[0].id} //登陆成功
       	res.send(result);
       	return;

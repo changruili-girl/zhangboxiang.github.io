@@ -1,3 +1,14 @@
+
+$('.fr-search').mousemove(function(){
+	$('.search').css({
+		'clip':'rect(0px,188px,35px,0px)'
+	})
+})
+$('.fr-search').mouseout(function(){
+	$('.search').css({
+		'clip':'rect(0px,188px,35px,188px)'
+	})
+})
 //列表数据遍历//分页
 var curPage = 1; //当前页码
 var total, pageSize, totalPage;
@@ -22,9 +33,9 @@ function ajax(page) {
 					'</td><td><a href="xjxq.html?id='+e.list[i].id+'" class="detail" detail="' + e.list[i].id + '">' + e.list[i].username +
 					'</a></td><td>' + e.list[i].sex + '</td><td>' + e.list[i].address +
 					'</td><td>' + e.list[i].branch +
-					'</td><td><span class="compile"><a href="#" class="change"  change="' +
+					'</td><td><span class="compile"><a href="jacascript:;" class="change"  change="' +
 					e.list[i].id + '">编辑</a></span><span class="delete"  delete="' +
-					e.list[i].id + '"><a href="#">删除</a></span></td></tr>'
+					e.list[i].id + '"><a href="javascript:;">删除</a></span></td></tr>'
 			}
 			$('.main').append(str);
 
@@ -151,13 +162,13 @@ $.ajax({
 			if(e.flag==1){
 				location.href="login.html"
 			}else{
-				alert('异常!!')
+				$('#san_name').html(e.uname)
+				$('.bx_tu4').attr('src','../../upload/'+e.img)
 			}
 		},error:function(){
 			alert('异常!!')
 		}
 	});
-
 
 //
 function change(id) {
@@ -181,7 +192,8 @@ function change(id) {
 		}
 	})
 	// 退出
-			$('#tui').click(function(){
+}
+$('#tui').click(function(){
 //				alert(1)
 				$.ajax({
 				    url:"http://localhost:8888/up/tuichu"
@@ -196,4 +208,3 @@ function change(id) {
 					}
 				})
 			})
-}

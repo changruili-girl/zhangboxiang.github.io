@@ -5,7 +5,8 @@ var fs = require('fs');
 var formidable = require("formidable");
 var pool = mysql.createPool({
 //	host:'192.168.113.148',
-    host:'192.168.1.104',
+     host:'192.168.43.168',
+//  host:'192.168.1.104',
 	user:'root',
 	password:'root',
 	database:'cc-test1603',
@@ -28,7 +29,7 @@ router.get('/list',function(req,res){
 	getAllUsers(function(err,result){
 		var curPage = req.query.curPage;
 		var total = result.length;
-		var pageSize = 15;
+		var pageSize = 10;
 		var totalPage = Math.ceil(total/pageSize);
 		var start = pageSize*(curPage - 1);
 		var end = pageSize*curPage;
@@ -59,7 +60,6 @@ router.post('/detail',function(req,res){
  	 move([name],function(err,result,connection){
 		  connection.release();
 		  res.send(result);
-		  console.log(result)
 	},'select * from mysql where username like "%" ? "%"')
  })
 //跳转修改页面
@@ -87,7 +87,6 @@ router.post('/alert',function(req,res){
 		username = req.body['username'];
 		move([address,age,branch,education,email,entrytime,img,resigntime,stafflevel,tel,id],function(err,result,connection){
 			connection.release();
-			console.log(result)
 			if(result.changedRows>0){
 				res.send({flag:1})
 			}
@@ -96,11 +95,9 @@ router.post('/alert',function(req,res){
 //删除数据  
 router.get('/delete',function(req,res){
 	var id = req.query.id;
-	console.log(id)
 	var del = 1;
  	 	move([del,id],function(err,result,connection){
 		  	
-		  	console.log(result);
 		  	connection.release();
 		  	if(result.changedRows>0){
 		  		res.send({flag:1})
@@ -133,5 +130,27 @@ router.post('/up', function(req, res) {
 			res.send(fName);
 		}
 	})
+})
+
+//recycle
+router.get('/recycle',function(req,res){
+	var del = 1;
+	move([del],function(err,result,connection){
+		connection.release();
+		res.send(result)
+	},'select * from mysql where del=?')
+})
+//rec
+router.get('/rec',function(req,res){
+	var id = req.query.id;
+	var del = 0;
+	move([del,id],function(err,result,connection){
+		connection.release();
+		if(result.changedRows>0){
+			res.send({flag:1})
+		}else{
+			res.send({flag:2})
+		}
+	},'update mysql set del=? where id=?')
 })
 module.exports=router;

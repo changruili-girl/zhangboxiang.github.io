@@ -6,7 +6,8 @@ var formidable = require("formidable");
 
 var pool = mysql.createPool({
 //	host: '192.168.113.148',
-    host:'192.168.1.104',
+//  host:'192.168.1.104',
+    host:'192.168.43.168',
 	user: 'root', //用户名
 	password: 'root', //密码
 	database: 'cc-test1603', //数据库名
@@ -17,6 +18,7 @@ var pool = mysql.createPool({
 router.get('/tui',function(req,res){
 if(req.session.uname!=''&& req.session.uname!=undefined){
      	console.log('into index....')
+     	res.send({uname:req.session.uname,img:req.session.img})
     }else{
     	//console.log(req.session.uname)
     	res.send({flag:1})

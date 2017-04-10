@@ -8,7 +8,8 @@ var router = express.Router();
 
 var pool =mysql.createPool({
 //	host:"192.168.113.148", 
-    host:'192.168.1.104',
+//  host:'192.168.1.104',
+    host:'192.168.43.168',
 	user:"root",   //用户名
 	password:"root",  //密码 
 	database:"cc-test1603",  //数据库名  //staffingsystem

@@ -16,7 +16,7 @@ $(function(){
 					console.log(e);
 					if(e.flag == 1) {
 						alert('登录成功！')
-						window.location.href = '../index.html'
+						window.location.href = '../../index.html'
 					} else if(e.flag == 2) {
 						alert('用户名不存在')
 					} else if(e.flag==3){

@@ -94,7 +94,7 @@ span{
 	float: left;
 	margin-top: 18px;
 	margin-left:8px;
-	background: url(../img/xj-img/6.gif) no-repeat;
+	border-radius:100%;
 }
 .bx_big{
 	width:98%;
@@ -170,12 +170,15 @@ span{
     margin-left: 20px;
     margin-top: 16px;
 }
-.icon-key{
+.icon-bin2{
 	color: #a6c1d4;
 	font-size: 18px;
-	    float: left;
+	float: left;
     margin-left: 20px;
     margin-top: 16px;
+}
+.icon-bin2:hover{
+	color:  #5a98d1;
 }
 /*.bx_wz{
 	width: 80%;

@@ -3,9 +3,9 @@ var router = express.Router();
 var mysql = require('mysql')
 
 var pool = mysql.createPool({
-//	host:'192.168.43.168',
+	host:'192.168.43.168',
 //	host:'192.168.113.148',
-	host:'192.168.1.104',	
+//	host:'192.168.1.104',	
 	user:'root',
 	password:'root',
 	database:'cc-test1603',
@@ -39,7 +39,7 @@ var pool = mysql.createPool({
 		var crl=my_sql;
 		 connection.query(crl,can,function(err,result){
 		 	callback(err,result,connection);
-		 })
+		 })0
 	})
 }
 

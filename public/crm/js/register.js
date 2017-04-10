@@ -96,11 +96,11 @@ $(function() {
 			//console.log(fileObj)
 			$.ajax({
 				type:"post",
-				url:"http://localhost:8888/crm/addfile",
+				url:"http://localhost:8888/register/addfile",
 				data:formData,
 				contentType:false,
 				processData:false,
-				success:function(e){
+				success:function(data){
 					$.ajax({
 						type: "post",
 						url: "http://localhost:8888/register/register",
@@ -109,7 +109,8 @@ $(function() {
 							'email': $('#email').val(),
 							'username': $('#text').val(),
 							'password': $('#pwd').val(),
-							'pwdtwo': $('#pwd2').val()
+							'pwdtwo': $('#pwd2').val(),
+							'img':data
 						},
 						success: function(e) {
 							console.log(e);

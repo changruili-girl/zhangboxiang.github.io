@@ -94,7 +94,7 @@ span{
 	float: left;
 	margin-top: 18px;
 	margin-left:8px;
-	background: url(../img/bx-img/6.gif) no-repeat;
+	border-radius:100%;
 }
 .bx_big{
 	width:98%;
@@ -134,9 +134,6 @@ span{
 .bx_list ul li:hover span{
 	color: #5a98d1;
 }
-.bx_list ul li a{
-	margin-left: 10px;
-}
 .bx_list ul li p{
 	width: 140px;
 	height: 37px;
@@ -149,6 +146,7 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-stats-bars{
 	color: #a6c1d4;
@@ -156,6 +154,7 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+     margin-right:10px;
 }
 .icon-file-text{
 	color: #a6c1d4;
@@ -163,6 +162,7 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+     margin-right:10px;
 }
 .icon-copy{
 	color: #a6c1d4;
@@ -170,13 +170,15 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+     margin-right:10px;
 }
-.icon-key{
+.icon-bin2{
 	color: #a6c1d4;
 	font-size: 18px;
-	    float: left;
+	float: left;
     margin-left: 20px;
     margin-top: 16px;
+     margin-right:10px;
 }
 .bx_wz{
 	width: 80%;
@@ -252,7 +254,7 @@ span{
 	border-radius: 4px;
 }
 .bx_br table{
-	width: 469px;
+	width: 80%;
 	height: 318px;
     background-color: transparent;
     margin: 0 auto;
@@ -330,13 +332,15 @@ span{
 	overflow: hidden;
 }
 .bx_row ul li{
-	width: 100%;
+	width: 96%;
 	height: 52px;
 	border-bottom: 1px solid #f5f5f7;
 	text-indent: 30px;
 	line-height: 52px;
 	color: #868da0;
 	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow: hidden;
 }
 
 .bx_zi{

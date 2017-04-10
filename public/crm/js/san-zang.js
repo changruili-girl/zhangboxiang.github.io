@@ -26,7 +26,8 @@ $(function() {
 			if(e.flag==1){
 				location.href="login.html"
 			}else{
-				alert('异常!!')
+				$('#san_name').html(e.uname)
+				$('.bx_tu4').attr('src','../../upload/'+e.img)
 			}
 		},error:function(){
 			alert('异常!!')

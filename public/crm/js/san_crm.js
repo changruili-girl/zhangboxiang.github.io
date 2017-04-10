@@ -5,11 +5,13 @@ $(function() {
 		type:"get",
 		url:"http://localhost:8888/crm/tui",
 		success:function(e){
-			var e = eval('('+e+')')
-			if(e.flag == 1){
+			var e = eval('(' + e + ')')
+			if(e.flag==1){
 				location.href="login.html"
 			}else{
-				alert('异常')
+				//console.log(e)
+				$('#san_name').html(e.uname)
+				$('.bx_tu4').attr('src','../../upload/'+e.img)
 			}
 		},error:function(){
 			alert('异常!!')
@@ -118,6 +120,7 @@ $(function() {
 			}]
 		};
 		Chart.setOption(option)
+		window.onresize = Chart.resize;
 	}
 
 	function pie_chart(e) {
@@ -142,7 +145,7 @@ $(function() {
 
 		//console.log(xiaoArr.length,zhongArr.length,daArr.length)
 
-		var Chart = echarts.init(document.getElementById('pie_chart'))
+		var Charts = echarts.init(document.getElementById('pie_chart'))
 
 		option = {
 			backgroundColor: '#fff',
@@ -217,7 +220,8 @@ $(function() {
 			}]
 		};
 
-		Chart.setOption(option)
+		Charts.setOption(option)
+		window.onresize = Charts.resize;
 	}
 
 	function line_chart(e) {
@@ -237,7 +241,7 @@ $(function() {
 			}
 		}
 
-		var Chart = echarts.init(document.getElementById('line_chart'))
+		var Chartc = echarts.init(document.getElementById('line_chart'))
 
 		option = {
 			title: {
@@ -270,7 +274,8 @@ $(function() {
 				data: [Arr1.length, Arr2.length, Arr3.length, Arr4.length]
 			}]
 		};
-		Chart.setOption(option)
+		Chartc.setOption(option)
+		window.onresize = Chartc.resize;
 	}
 
 	$.ajax({

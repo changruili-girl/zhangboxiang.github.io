@@ -1,5 +1,21 @@
 body{background: #e9ecf3;}
-.cc{width:77%;overflow:hidden;padding:12px 24px 12px;-border: 1px solid #e9ecf3;background-color: #fff;margin-left: 2%;float:left}
+.cc{width:77%;overflow:hidden;padding:12px 24px 12px;-border: 1px solid #e9ecf3;background-color: #fff;margin-left: 2%;float:left;border-radius: 5px;}
+/*试验区*/
+.cc-add{width:100%;height:92px;}
+.bj{background: url(../img/cc-img/weather.jpg) no-repeat;background-size:cover;}
+.demo { width:100px; min-width:100px; max-width:100px; }
+#demo { color:#FFF;overflow:hidden;}
+#demo i { background: no-repeat top left; display:inline-block; height:120px;margin:0 auto 20px auto; font-size:50px; font-style:normal; text-align:right;margin-left:50px;width:25%;}
+#demo i.icon-xiaoyu { background-image:url(../img/cc-img/icon/xiaoyu.png); }
+#demo i.icon-zhongyu { background-image:url(../img/cc-img/icon/zhongyu.png); }
+#demo i.icon-dayu { background-image:url(../img/cc-img/icon/dayu.png); }
+#demo i.icon-qing { background-image:url(../img/cc-img/icon/qing.png); }
+#demo i.icon-duoyun { background-image:url(../img/cc-img/icon/duoyun.png); }
+#demo i.icon-yin { background-image:url(../img/cc-img/icon/yin.png); }
+#demo p { display:inline-block;-background:rgba(0,0,0,.3);padding:20px;font-size:20px;text-shadow: 0 0 10px #4A85C3; line-height:50px; padding-left:100px;}
+#demo p span { margin:0 6px; }
+#demo2 { width:980px; margin:0 auto; margin-top:20px; background:#fafafa; border:1px solid #ddd; padding:30px 0; overflow:hidden; }
+#demo p:last-child{display: block;margin-top:-100px;}
 /*	标题区	 */
 .cc-title{min-height: 48px;margin-bottom:10px;border-bottom: 1px solid #eef1f5;}
 .cc-title p{color: #32c5d2;padding:10px 0;font-size: 18px;line-height: 18px;font-weight:700;}
@@ -14,29 +30,43 @@ body{background: #e9ecf3;}
 .cc-block .block_g .fl p span{font-size: 20px;font-weight:bold;}
 .cc-block .block_g .fr{width:23%;}
 .cc-block .block_g .fr input,.cc-block .block_g .fr button{border:0;outline:none;}
-.cc-block .block_g .fr div{width:100%;position:relative;border-radius: 3px;overflow: hidden;display: table;border-collapse: separate;}
+.cc-block .block_g .fr div{width:100%;position:relative;border-radius: 3px;overflow: hidden;display: table;border-collapse: separate;height:35px;}
 .cc-block .block_g .fr div span{position:absolute;right:0;top:0;}
-.cc-block .block_g .fr div input{width:100%;padding-right:43px;color: #555;border-top-right-radius: 0;border-bottom-right-radius: 0;height:32px;border-bottom: 1px solid #c2cad8;}
-.cc-block .block_g .fr div span{height:35px;width:43px;}
+.cc-block .block_g .fr div input{width:80%;color: #555;border-top-right-radius: 0;border-bottom-right-radius: 0;border-bottom: 1px solid #c2cad8;position: absolute;height:32px;clip:rect(0,188px,35px,188px);transition:all 1s;
+background:transparent;}
+.cc-block .block_g .fr div span{height:35px;width:20%;}
 .cc-block .block_g .fr div span button{width:100%;height:100%;background-color:#5eb95e;}
 /*	列表区	 */
 .cc-main{padding:0 10px;}
 .cc-main table{width:100%;}
 .cc-main table thead tr{border-bottom:1px solid #d9d9d9;}
 .cc-main table th{text-align: left;padding:16px;line-height:1.6;font-weight: bold;color: #93a2a9;border-bottom: 1px solid #d9d9d9;}
-.cc-main table tbody tr:nth-child(odd){background:#f3f4f6;}
+.cc-main table tbody tr:nth-child(even){background:#f3f4f6;}
 .cc-main table tbody tr td{border-top: 1px solid #F2F5F8;color: #93a2a9;padding:12px;line-height:1.2;}
-.cc-main table tbody tr td a{color:#0e90d2;}
+.cc-main table tbody tr td a{color:#0e90d2;display: inline-block;}
+.cc-main table tbody tr td span a{padding:8px 8px 8px 26px;}
 .cc-main table tbody tr td a:focus,.cc-main table tbody tr td a:hover{color: #23527c;}  
-.cc-main table tbody tr:nth-child(even):hover{background:#e3e4e5;border-top: 1px solid #F2F5F8;}
-.cc-main table tbody span{border:1px solid #d9d9d9;padding:8px 8px 8px 26px;transition:all .5s;cursor: pointer;}
-.cc-main table tbody span:first-child{border-right:none;background: white url(../img/cc-img/cc-02.gif) no-repeat 9px 9px;}
-.cc-main table tbody span:last-child{background: white url(../img/cc-img/cc-03.gif) no-repeat 9px 9px;}
+.cc-main table tbody tr:nth-child(odd):hover{background:#e3e4e5;border-top: 1px solid #F2F5F8;}
+.cc-main table tbody span{border:1px solid #d9d9d9;transition:all .5s;cursor: pointer;border-radius: 3px;}
+.cc-main table tbody span:first-child{border-right:none;background: white url(../img/cc-img/cc-02.gif) no-repeat 9px 11px;}
+.cc-main table tbody span:last-child{background: white url(../img/cc-img/cc-03.gif) no-repeat 9px 11px;}
 .cc-main table tbody span:last-child a{color:#dd514c}
 .cc-main table tbody span:hover{box-shadow:0 0px 30px 1px #ccc inset;}
 .cc-main table tbody span:first-child:hover a{color:#0e90d2;}
 .cc-main table tbody span:last-child:hover a{color:#dd514c;}
-
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+    .cc-main table thead{
+        background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-background-size: 200% 100%;
+        -webkit-animation: masked-animation 2s infinite linear;
+    }
+}
+@-webkit-keyframes masked-animation {
+    0%  { background-position: 0 0;}
+    100% { background-position: -100% 0;}
+}
 /*	 分页区	*/
 .cc-page{overflow: hidden;border-bottom:1px solid #d9d9d9;width:100%;margin:40px 0 80px;padding-bottom:40px;}
 .cc-page>div{overflow: hidden;}
@@ -46,7 +76,6 @@ body{background: #e9ecf3;}
 .cc-page #pagecount .active{background:#23abf0;color:white;border: none;}
 .cc-page #pagecount span a{color:#23abf0;font-size:15px;display: inline-block;width:100%;}
 .cc-page #pagecount span:hover a{background:#23abf0;color:white;}
-/*.cc-page #pagecount span:hover{border:1px solid transparent;}*/
 
 .bx_total{
 	width: 100%;
@@ -137,7 +166,7 @@ span{
 	float: left;
 	margin-top: 18px;
 	margin-left:8px;
-	background: url(../img/bx-img/6.gif) no-repeat;
+	border-radius:100%;
 }
 .bx_big{
 	width:98%;
@@ -177,9 +206,6 @@ span{
 .bx_list ul li:hover span{
 	color: #5a98d1;
 }
-.bx_list ul li a{
-	margin-left: 10px;
-}
 .bx_list ul li p{
 	width: 140px;
 	height: 37px;
@@ -192,6 +218,7 @@ span{
     margin-left: 20px;
     margin-top: 16px;
     color: #a6c1d4;
+    margin-right:10px;
 }
 .icon-stats-bars{
 	color: #a6c1d4;
@@ -199,13 +226,15 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-file-text{
 	color: #5a98d1;
 	font-size: 18px;
-	    float: left;
+	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-copy{
 	color: #a6c1d4;
@@ -213,11 +242,13 @@ span{
 	    float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
-.icon-key{
+.icon-bin2{
 	color: #a6c1d4;
 	font-size: 18px;
-	    float: left;
+	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }

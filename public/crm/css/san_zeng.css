@@ -100,7 +100,7 @@ span{
 	float: left;
 	margin-top: 18px;
 	margin-left:8px;
-	background: url(../img/bx-img/6.gif) no-repeat;
+	border-radius:100%;
 }
 .bx_big{
 	width:98%;
@@ -140,9 +140,6 @@ span{
 .bx_list ul li:hover span{
 	color: #5a98d1;
 }
-.bx_list ul li a{
-	margin-left: 10px;
-}
 .bx_list ul li p{
 	width: 140px;
 	height: 37px;
@@ -155,6 +152,7 @@ span{
 	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-stats-bars{
 	color: #a6c1d4;
@@ -162,13 +160,15 @@ span{
 	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-file-text{
-	color: #5a98d1;
+	color: #a6c1d4;
 	font-size: 18px;
 	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
 .icon-copy{
 	color: #a6c1d4;
@@ -176,13 +176,18 @@ span{
 	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
 }
-.icon-key{
+.icon-bin2{
 	color: #a6c1d4;
 	font-size: 18px;
 	float: left;
     margin-left: 20px;
     margin-top: 16px;
+    margin-right:10px;
+}
+.icon-bin2:hover{
+	color:  #5a98d1;
 }
 .bx_wz {
 	width: 80%;
@@ -323,6 +328,7 @@ span{
 	float: left;
 	padding:0 20px 40px 20px;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 .san-con> h2 {
@@ -352,7 +358,7 @@ span{
 }
 
 .san-name .san-input input[type=text],.san-name .san-input input[type=number],.san-name .san-input input[type=email],.san-name .san-input input[type=date] {
-	width: 505px;
+	width: 100%;
 	height: 35px;
 	border: 1px solid #ccc;
 	text-indent: 15px;
@@ -510,3 +516,11 @@ span{
 	-o-transition: border linear .5s, -o-box-shadow linear 1s;
 	transition: border linear .5s, box-shadow linear 1s;
 }
+.aMain .san-form{padding:5% 0 0 0;}
+.aImg{width:20%;}
+.aImg a{margin-top:5%;}
+.aBox{width:70%;}
+.aBox label{width:20%;}
+.aBox .san-input{width:70%;}
+#san_btn{border:0;cursor:pointer;font-weight: bold;letter-spacing: 12px;text-indent:12px;border-radius: 4px;}
+#san_btn:hover{background:#4a85c3;}
